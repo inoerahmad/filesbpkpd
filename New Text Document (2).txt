@@ -1,0 +1,72 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.sidebar{
+    position: fixed;
+    left: 250px;
+    width: 250px;
+    height: 100%;
+    background: #042331;
+}
+table{
+    position: center;
+    border-collapse: collapse;
+    font-size: 10pt;
+    border: 1px solid #cccccc;
+}
+td{
+    padding: 3px;
+    height: 25px;
+}
+th{
+    background-color: steelblue;
+    color: white;
+    height: 30px;
+} 
+table tbody td{
+    background-color: #ffffff;
+
+}
+table tbody tr:nth-child(odd) td{
+    background-color:#eeeeee;
+
+}
+table tbody tr:hover td{
+    background-color: rgb(247, 87, 135);
+    border-color: rgb(247, 100, 144);
+    transition: all .2s;
+}
+
+//dashboard.html
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title> Side Menu Bar CSS</title>
+        <link rel="stylesheet" href="style2.css"> 
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"/>
+    </head>
+            <body>
+                <input type="checkbox" id="check">
+                <label for="check">
+                    <i class="fa fa-bars" id="btn"></i>
+                    <i class="fa fa-times" id="cancel"></i>
+                </label>
+                <div class="sidebar">
+                    <header>APP LOE</header>
+                <ul>
+                    <li><a href="tb_barang.php"><i class="fa fa-qrcode"></i>Dashboard</a></li>
+                    <li><a href="#"><i class="fa fa-link"></i>Shortcuts</a></li>
+                    <li><a href="#"><i class="fa fa-dashboard"></i>Overview</a></li>
+                    <li><a href="#"><i class="fa fa-pencil"></i>Events</a></li>
+                    <li><a href="#"><i class="fa fa-user-md"></i>About</a></li>
+                    <li><a href="#"><i class="fa fa-question"></i>Services</a></li>
+                    <li><a href="#"><i class="fa fa-envelope-square"></i>Contact</a></li>
+                </ul>   
+            </body>
+</html>

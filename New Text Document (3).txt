@@ -1,0 +1,84 @@
+<html>
+<link rel="stylesheet" href="style_tbbrg.css">
+
+<head>
+    <h3>Tabel Data Barang</h3>
+</head>
+<body>
+    <div class="sidebar"></div>
+    <div class="container">  
+    <table border="1">
+        <tr>
+            <th width="50">No.</th>
+            <th width="250">Nama Barang</th>
+            <th width="100">Qty</th>
+            <th width="180">Harga</th>
+        </tr>
+        <?php
+        //koneksi ke database
+        $koneksi = new mysqli("localhost","root","","db_databrg");
+        //menampilkan data
+        $no = 1;
+        $data = $koneksi->query("select * from tb_brg");
+        $total = 0;
+        $tqty = 0;
+        while($tampil = $data->fetch_array()){
+            $tqty += $tampil["Qty"];
+            $total += $tampil["Harga"];
+        ?>      
+        <tr>
+            <td><?php echo $no++; ?>.</td>
+            <td><?php echo $tampil["Nama Barang"]; ?></td>
+            <td><?php echo $tampil["Qty"]; ?></td>
+            <td><?php echo number_format($tampil["Harga"]); ?></td>
+        </tr>
+        <?php } ?>
+        <tr>
+            <td colspan="2"><b>Total</b></td>
+            <td><b><?php echo $tqty; ?></b></td>
+            <td><b><?php echo number_format($total); ?></b></td>
+        </tr>    
+    </table>
+</div>    
+</body>
+</html>
+
+//style_tbbrg.css
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.sidebar{
+    background: red;
+    width: 250px;
+}
+.container{
+    background: #ffffff;
+}
+table{
+    margin-left: 50%;
+    border-collapse: collapse;
+    font-size: 10pt;
+    border: 1px solid #cccccc;
+}
+td{
+    padding: 3px;
+    height: 25px;
+}
+th{
+    background-color: steelblue;
+    color: white;
+    height: 30px;
+} 
+table tbody td{
+    background-color: #ffffff;
+
+}
+table tbody tr:nth-child(odd) td{
+    background-color:#eeeeee;
+
+}
+table tbody tr:hover td{
+    background-color: rgb(247, 87, 135);
+    border-color: rgb(247, 100, 144);
+    transition: all .2s;
+}

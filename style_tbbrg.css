@@ -1,0 +1,49 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h3{
+    margin-left: 20px;
+}
+.sidebar{
+    background: red;
+    width: 250px;
+    height: 100%;
+    position: absolute;
+}
+.container{
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    background: gainsboro;
+    margin-left: 27%;
+    float: right;
+}
+table{
+    margin top: -100px;
+    margin-left: 2%;
+    border-collapse: collapse;
+    font-size: 10pt;
+    border: 1px solid #cccccc;
+}
+td{
+    padding: 3px;
+    height: 25px;
+}
+th{
+    background-color: steelblue;
+    color: white;
+    height: 30px;
+} 
+table tbody td{
+    background-color: #ffffff;
+
+}
+table tbody tr:nth-child(odd) td{
+    background-color:#eeeeee;
+
+}
+table tbody tr:hover td{
+    background-color: rgb(247, 87, 135);
+    border-color: rgb(247, 100, 144);
+    transition: all .2s;
+}
